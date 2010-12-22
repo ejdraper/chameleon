@@ -7,24 +7,56 @@ rescue LoadError
 end
 
 require 'rake'
-require 'rake/rdoctask'
+require "rake/gempackagetask"
+require "rake/rdoctask"
 
-require 'rake/testtask'
-
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = false
+require "rake/testtask"
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList["test/**/*_test.rb"]
+  t.verbose = true
 end
 
-task :default => :test
+task :default => ["test"]
 
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Chameleon'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README.rdoc')
-  rdoc.rdoc_files.include('app/**/*.rb')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+spec = Gem::Specification.new do |s|
+
+  s.name              = "chameleon"
+  s.version           = "0.1.0"
+  s.summary           = "Rails engine to let you easily build Geckoboard widgets"
+  s.author            = "Elliott Draper"
+  s.email             = "el@ejdraper.com"
+  s.homepage          = "http://github.com/ejdraper/chameleon"
+
+  s.has_rdoc          = true
+  s.extra_rdoc_files  = %w(README.rdoc)
+  s.rdoc_options      = %w(--main README.rdoc)
+
+  s.files             = %w(MIT-LICENSE README.rdoc) + Dir.glob("{app,config,test,lib}/**/*")
+  s.require_paths     = ["lib"]
+
+  s.add_development_dependency("rails", "3.0.3")
+end
+
+Rake::GemPackageTask.new(spec) do |pkg|
+  pkg.gem_spec = spec
+end
+
+desc "Build the gemspec file #{spec.name}.gemspec"
+task :gemspec do
+  file = File.dirname(__FILE__) + "/#{spec.name}.gemspec"
+  File.open(file, "w") {|f| f << spec.to_ruby }
+end
+
+task :package => :gemspec
+
+Rake::RDocTask.new do |rd|
+  rd.main = "README.rdoc"
+  rd.rdoc_files.include("README.rdoc", "app/**/*.rb", "lib/**/*.rb")
+  rd.rdoc_dir = "rdoc"
+end
+
+desc 'Clear out RDoc and generated packages'
+task :clean => [:clobber_rdoc, :clobber_package] do
+  rm "#{spec.name}.gemspec"
 end

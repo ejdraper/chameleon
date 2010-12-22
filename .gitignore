@@ -8,3 +8,5 @@ test/dummy/tmp/
 *.swo*
 *.swn*
 *.un*
+pkg
+rdoc
