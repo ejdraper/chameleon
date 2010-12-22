@@ -32,7 +32,7 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files  = %w(README.rdoc)
   s.rdoc_options      = %w(--main README.rdoc)
 
-  s.files             = %w(MIT-LICENSE README.rdoc) + Dir.glob("{app,config,test,lib}/**/*")
+  s.files             = %w(MIT-LICENSE README.rdoc) + Dir.glob("{app,config,lib}/**/*")
   s.require_paths     = ["lib"]
 
   s.add_development_dependency("rails", "3.0.3")
