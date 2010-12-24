@@ -10,3 +10,4 @@ test/dummy/tmp/
 *.un*
 pkg
 rdoc
+.rvmrc
