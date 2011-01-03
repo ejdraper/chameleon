@@ -3,6 +3,9 @@ widget :test2 do
   key_parameter :token
   type "number_and_secondary"
   data do
-    [1,2]
+    {
+      :value => 1,
+      :previous => 2
+    }
   end
 end

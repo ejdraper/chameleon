@@ -21,21 +21,24 @@ class WidgetsTest < ActionController::TestCase
     get :show, :id => "test", :key => "c6fdeae2af2c327cac35abc2ccacd8619af56821"
     assert_response :ok
     assert_template "widgets/number_and_secondary"
-    assert_equal [1,2], assigns(:data)
+    assert_equal 1, assigns(:data)[:value]
+    assert_equal 2, assigns(:data)[:previous]
   end
 
   test "widget with custom key parameter" do
     get :show, :id => "test2", :token => "c6fdeae2af2c327cac35abc2ccacd8619af56821"
     assert_response :ok
     assert_template "widgets/number_and_secondary"
-    assert_equal [1,2], assigns(:data)
+    assert_equal 1, assigns(:data)[:value]
+    assert_equal 2, assigns(:data)[:previous]
   end
 
   test "widget with custom auth block" do
     get :show, :id => "test3", :token => "987654321"
     assert_response :ok
     assert_template "widgets/number_and_secondary"
-    assert_equal [5,3], assigns(:data)
+    assert_equal 5, assigns(:data)[:value]
+    assert_equal 3, assigns(:data)[:previous]
   end
 
   test "number and secondary widget" do

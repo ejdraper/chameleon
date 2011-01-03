@@ -2,9 +2,9 @@
 <root>
   <% @data.each do |item| %>
     <item>
-      <value><%= item[0] %></value>
-      <label><%= item[1] %></label>
-      <colour><%= item[2] %></colour>
+      <value><%= item[:value] %></value>
+      <label><%= item[:label] %></label>
+      <colour><%= item[:colour] %></colour>
     </item>
   <% end %>
 </root>

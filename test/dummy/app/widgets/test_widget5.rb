@@ -3,9 +3,9 @@ widget :test5 do
   type "pie"
   data do |account|
     [
-      [0.5, "PieA", "ABABAB"],
-      [1.2, "PieB", "CDCDCD"],
-      [3.5, "PieC", "EFEFEF"]
+      {:value => 0.5, :label => "PieA", :colour => "ABABAB"},
+      {:value => 1.2, :label => "PieB", :colour => "CDCDCD"},
+      {:value => 3.5, :label => "PieC", :colour => "EFEFEF"}
     ]
   end
 end

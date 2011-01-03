@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
   <item>
-    <value><%= @data.is_a?(Array) ? @data.first : @data %></value>
+    <value><%= @data[:value] %></value>
     <text></text>
   </item>
   <item>
-    <value><%= @data.is_a?(Array) && @data.length == 2 ? @data.last : nil %></value>
+    <value><%= @data[:previous] %></value>
     <text></text>
   </item>
 </root>
