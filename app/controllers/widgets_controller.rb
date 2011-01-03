@@ -4,7 +4,7 @@ class WidgetsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def show
-    @data = @widget.data.call
+    @data = @widget.data.call(@auth)
     render "#{@widget.type}.xml"
   end
 
@@ -15,6 +15,12 @@ class WidgetsController < ApplicationController
     end
 
     def validate_key
-      raise "Invalid key!" if !@widget.public && (params[@widget.key_parameter].blank? || params[@widget.key_parameter] != @widget.key)
+      return if @widget.public
+      if @widget.auth
+        @auth = @widget.auth.call(self, request, params)
+        raise "Invalid authentication!" if !@auth
+      else
+        raise "Invalid key!" if params[@widget.key_parameter] != @widget.key
+      end
     end
 end

@@ -2,7 +2,6 @@ require "test_helper"
 
 class WidgetTest < Test::Unit::TestCase
   def test_widget
-    assert_equal 2, Widget.widgets.length
     widget = Widget.find(:test)
     assert_not_nil widget
     assert_equal :test, widget.name

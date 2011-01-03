@@ -30,6 +30,11 @@ class Widget
     @key_parameter || :key
   end
 
+  def auth(&block)
+    @auth = block if block_given?
+    @auth
+  end
+
   def type(value = nil)
     @type = value unless value.nil?
     @type
