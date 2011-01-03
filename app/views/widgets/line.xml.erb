@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <% @data[0].each do |item| %>
+    <item><%= item %></item>
+  <% end %>
+  <settings>
+    <% @data[1].each do |x| %>
+      <axisx><%= x %></axisx>
+    <% end %>
+    <% @data[2].each do |y| %>
+      <axisy><%= y %></axisy>
+    <% end %>
+    <colour><%= @data[3] || "ff9900" %></colour>
+  </settings>
+</root>

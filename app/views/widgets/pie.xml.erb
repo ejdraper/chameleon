@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <% @data.each do |item| %>
+    <item>
+      <value><%= item[0] %></value>
+      <label><%= item[1] %></label>
+      <colour><%= item[2] %></colour>
+    </item>
+  <% end %>
+</root>
