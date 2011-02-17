@@ -59,6 +59,24 @@ EOF
     assert_equal xml, response.body
   end
 
+  test "number and secondary widget with custom display text" do
+    get :show, :id => "number_and_secondary_with_text", :key => "x"
+xml =<<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <item>
+    <value>1</value>
+    <text>Display Me</text>
+  </item>
+  <item>
+    <value>2</value>
+    <text></text>
+  </item>
+</root>
+EOF
+    assert_equal xml, response.body
+  end
+
   test "line widget" do
     get :show, :id => "test4", :token => "987654321"
 xml =<<EOF
