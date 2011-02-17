@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <% @data.each do |panel| %>
+  <item>
+    <text><![CDATA[<%= panel[:text] %>]]></text>
+    <type><%=
+      case panel[:type]
+        when :alert then 1
+        when :info then 2
+        else 0
+      end
+    %></type>
+  </item>
+  <% end %>
+</root>

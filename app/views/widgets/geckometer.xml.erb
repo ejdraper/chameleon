@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <item><%= @data[:value] %></item>
+  <min>
+    <value><%= @data[:min][:value] rescue "" %></value>
+    <text><%= @data[:min][:label] rescue "" %></text>
+  </min>
+  <max>
+    <value><%= @data[:max][:value] rescue "" %></value>
+    <text><%= @data[:max][:label] rescue "" %></text>
+  </max>
+</root>
