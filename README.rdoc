@@ -12,7 +12,7 @@ This only works for Rails 3 apps.
 
 This provides a generator to build widgets using a basic DSL syntax to describe the data to be exposed, and the settings for it to be exposed under, and also includes the controller/routing necessary to provide an endpoint for Geckoboard to retrieve the data to display on your dashboard.
 
-Currently it supports the "number and optional secondary stat", "line" and "pie" widget types.
+Currently it supports the "number and optional secondary stat" (with optional display text), "line", "pie", "geckometer", "rag" and "text" widget types.
 
 == SYNOPSIS:
 
@@ -64,9 +64,14 @@ It's best to add it to the Gemfile for your Rails 3 app, but if needed you can i
 
   gem install chameleon
 
+== CONTRIBUTORS:
+
+Elliott Draper
+Tim Blair
+
 == LICENSE:
 
-Copyright 2010 Elliott Draper <el@ejdraper.com>
+Copyright 2011 Elliott Draper <el@ejdraper.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
