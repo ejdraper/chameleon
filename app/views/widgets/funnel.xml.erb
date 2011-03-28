@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <% if @data.has_key?(:reverse) %>
+  	<type>reverse</type>
+  <% end %>
+  <% if @data.has_key?(:percentage) %>
+  	<percentage>hide</percentage>
+  <% end %>
+  <% @data[:items].each do |key, value| %>
+  	<item>
+	  <value><%= value %></value>
+	  <label><![CDATA[<%= key %>]]></label>
+  	</item>
+  <% end %>
+</root>
