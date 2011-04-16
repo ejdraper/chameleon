@@ -248,4 +248,47 @@ EOF
     assert_equal xml, response.body
   end
 
+  test "funnel widget" do
+    get :show, :id => "funnel", :key => "x"
+xml =<<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <type>reverse</type>
+    <percentage>hide</percentage>
+    <item>
+      <value>87809</value>
+      <label><![CDATA[Step 1]]></label>
+    </item>
+    <item>
+      <value>70022</value>
+      <label><![CDATA[Step 2]]></label>
+    </item>
+    <item>
+      <value>63232</value>
+      <label><![CDATA[Step 3]]></label>
+    </item>
+    <item>
+      <value>53232</value>
+      <label><![CDATA[Step 4]]></label>
+    </item>
+    <item>
+      <value>32123</value>
+      <label><![CDATA[Step 5]]></label>
+    </item>
+    <item>
+      <value>23232</value>
+      <label><![CDATA[Step 6]]></label>
+    </item>
+    <item>
+      <value>12232</value>
+      <label><![CDATA[Step 7]]></label>
+    </item>
+    <item>
+      <value>2323</value>
+      <label><![CDATA[Step 8]]></label>
+    </item>
+</root>
+EOF
+    assert_equal xml, response.body
+  end  
 end
