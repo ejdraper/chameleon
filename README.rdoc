@@ -20,6 +20,10 @@ Simply add to your Gemfile as follows:
 
   gem 'chameleon'
 
+Edit your routes to include:
+
+    match "widgets/:id", :to => "widgets#show"
+
 Then run "bundle install" and once installed, you can run:
 
   rails g chameleon:widget NAME TYPE
