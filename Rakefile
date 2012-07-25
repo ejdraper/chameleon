@@ -22,7 +22,7 @@ task :default => ["test"]
 spec = Gem::Specification.new do |s|
 
   s.name              = "chameleon"
-  s.version           = "0.2.2"
+  s.version           = "0.2.3"
   s.summary           = "Rails engine to let you easily build Geckoboard widgets"
   s.author            = "Elliott Draper"
   s.email             = "el@ejdraper.com"
@@ -35,7 +35,7 @@ spec = Gem::Specification.new do |s|
   s.files             = %w(MIT-LICENSE README.rdoc) + Dir.glob("{app,config,lib}/**/*")
   s.require_paths     = ["lib"]
 
-  s.add_development_dependency("rails", "3.0.3")
+  s.add_development_dependency("rails", "3.2.6")
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
