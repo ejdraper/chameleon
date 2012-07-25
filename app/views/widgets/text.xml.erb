@@ -3,9 +3,9 @@
   <% @data.each do |panel| %>
   <item>
     <% if !panel[:html].nil? %>
-      <text><![CDATA[<%=raw panel[:html] %>]]></text>
+    <text><![CDATA[<%=raw panel[:html] %>]]></text>
     <% else %>
-      <text><![CDATA[<%= panel[:text] %>]]></text>
+    <text><![CDATA[<%= panel[:text] %>]]></text>
     <% end %>
     <type><%=
       case panel[:type]
