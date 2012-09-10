@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class WidgetsTest < ActionController::TestCase
-  tests WidgetsController
+  tests Chameleon::WidgetsController
 
   test "invalid widget" do
     ex = assert_raise(RuntimeError) do
