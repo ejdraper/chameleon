@@ -10,6 +10,6 @@ end
 
 Kernel.class_eval do
   def widget(name, &block)
-    Widget.widget(name, &block)
+    Chameleon::Widget.widget(name, &block)
   end
 end

@@ -10,7 +10,7 @@ class Chameleon::WidgetsController < ApplicationController
 
   protected
     def find_widget
-      @widget = Widget.find(params[:id].gsub(".xml", ""))
+      @widget = Chameleon::Widget.find(params[:id].gsub(".xml", ""))
       raise "Invalid widget!" if @widget.nil?
     end
 
