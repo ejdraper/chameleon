@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  match "widgets/:id", :to => "widgets#show"
+  match "widgets/:id", :to => "chameleon/widgets#show"
 end
