@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = "2012-07-25"
   s.email = "el@ejdraper.com"
   s.extra_rdoc_files = ["README.rdoc"]
-  s.files = ["MIT-LICENSE", "README.rdoc", "app/controllers/widgets_controller.rb", "app/models/widget.rb", "app/views/widgets/funnel.xml.erb", "app/views/widgets/geckometer.xml.erb", "app/views/widgets/line.xml.erb", "app/views/widgets/number_and_secondary.xml.erb", "app/views/widgets/pie.xml.erb", "app/views/widgets/rag.xml.erb", "app/views/widgets/text.xml.erb", "config/routes.rb", "lib/chameleon.rb", "lib/generators/chameleon/widget_generator.rb"]
+  s.files = ["MIT-LICENSE", "README.rdoc", "app/controllers/chameleon/widgets_controller.rb", "app/models/chameleon/widget.rb", "app/views/chameleon/widgets/funnel.xml.erb", "app/views/chameleon/widgets/geckometer.xml.erb", "app/views/chameleon/widgets/line.xml.erb", "app/views/chameleon/widgets/number_and_secondary.xml.erb", "app/views/chameleon/widgets/pie.xml.erb", "app/views/chameleon/widgets/rag.xml.erb", "app/views/chameleon/widgets/text.xml.erb", "config/routes.rb", "lib/chameleon.rb", "lib/generators/chameleon/widget_generator.rb"]
   s.homepage = "http://github.com/ejdraper/chameleon"
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]

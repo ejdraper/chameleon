@@ -1,4 +1,4 @@
-class WidgetsController < ApplicationController
+class Chameleon::WidgetsController < ApplicationController
   before_filter :find_widget
   before_filter :validate_key
   skip_before_filter :verify_authenticity_token
@@ -10,7 +10,7 @@ class WidgetsController < ApplicationController
 
   protected
     def find_widget
-      @widget = Widget.find(params[:id].gsub(".xml", ""))
+      @widget = Chameleon::Widget.find(params[:id].gsub(".xml", ""))
       raise "Invalid widget!" if @widget.nil?
     end
 
