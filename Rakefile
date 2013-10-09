@@ -22,10 +22,10 @@ task :default => ["test"]
 spec = Gem::Specification.new do |s|
 
   s.name              = "chameleon"
-  s.version           = "0.2.3"
+  s.version           = "0.2.4"
   s.summary           = "Rails engine to let you easily build Geckoboard widgets"
   s.author            = "Elliott Draper"
-  s.email             = "el@ejdraper.com"
+  s.email             = "el@kickcode.com"
   s.homepage          = "http://github.com/ejdraper/chameleon"
 
   s.has_rdoc          = true

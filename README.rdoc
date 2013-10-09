@@ -6,7 +6,7 @@
 
 This is a Rails engine designed to make it super easy to expose data from your application as widgets for use with Geckoboard (http://geckoboard.com).
 
-This only works for Rails 3 apps.
+This works for Rails 3 and Rails 4 apps.
 
 == FEATURES:
 
@@ -56,7 +56,7 @@ More documentation on the settings available for the widgets, as well as the dif
 
 == REQUIREMENTS:
 
-A Rails 3 application.
+A Rails 3 or Rails 4 application and a Geckoboard account.
 
 == INSTALL:
 
@@ -67,11 +67,14 @@ It's best to add it to the Gemfile for your Rails 3 app, but if needed you can i
 == CONTRIBUTORS:
 
 Elliott Draper
+
 Tim Blair
+
+Jared Armstrong
 
 == LICENSE:
 
-Copyright 2011 Elliott Draper <el@ejdraper.com>
+Copyright 2013 Elliott Draper <el@kickcode.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
