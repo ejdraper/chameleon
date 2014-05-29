@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <% @data.each do |entry| %>
+    <item>
+      <label>
+      <name><![CDATA[<%=raw entry[:name] %>]]></name>
+      <color><%=entry[:color] %></color>
+    </label>
+    <title>
+      <text><![CDATA[<%=raw entry[:text] %>]]></text>
+      <highlight><%=entry[:highlight] %></highlight>
+    </title>
+    <description><![CDATA[<%=raw entry[:description] %>]]></description>
+  </item>
+  <% end %>
+</root>
